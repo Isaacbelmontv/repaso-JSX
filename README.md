@@ -159,4 +159,118 @@ ReactDOM.render(
 );
 ```
 
+**Otro ejemplo pasando variables**
+
+
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var MyName = React.createClass({
+	// name property goes here:
+name: 'whatever-your-name-is-goes-here',
+  render: function () {
+    return <h1>My name is {this.name}.</h1>;
+  }
+});
+
+ReactDOM.render(<MyName />, document.getElementById('app'));
+```
+
+**Generando botones con alerta**
+
+
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Button = React.createClass({
+  scream: function () {
+    alert('AAAAAAAAHHH!!!!!');
+  },
+
+  render: function () {
+    return <button onClick={this.scream} >AAAAAH!</button>;
+  }
+});
+
+ReactDOM.render(
+  <Button />,
+  document.getElementById('app')
+);
+```
+
+
+**Invocando el uso de otras funciones**
+
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
+var NavBar = require('./NavBar.js');
+
+var ProfilePage = React.createClass({
+  render: function () {
+    return (
+      <div>
+         <NavBar />
+        <h1>All About Me!</h1>
+        <p>I like movies and blah blah blah blah blah</p>
+        <img src="https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-monkeyselfie.jpg" />
+      </div>
+    );
+  }
+});
+```
+
+**Imprimiendo en el react**
+
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var PropsDisplayer = React.createClass({
+  render: function () {
+  	var stringProps = JSON.stringify(this.props);
+
+    return (
+      <div>
+        <h1>CHECK OUT MY PROPS OBJECT</h1>
+        <h2>{stringProps}</h2>
+      </div>
+    );
+  }
+});
+
+// ReactDOM.render goes here:
+ReactDOM.render(
+  <PropsDisplayer myProp="Hello" />,
+  document.getElementById('app')
+);  
+```
+
+**Imprimiendo variables del react**
+
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Greeting = React.createClass({
+  render: function () {
+    return <h1>Hi there, {this.props.firstName}!
+</h1>;
+  }
+});
+
+// ReactDOM.render goes here:
+ReactDOM.render(
+  <Greeting firstName='IsaacBelmont C;' />, 
+  document.getElementById('app')
+);
+```
+
+
+
+
+
+
 
