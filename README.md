@@ -138,6 +138,25 @@ ReactDOM.render(
 );
 ```
 
+**Ejemplo de un if y else**
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
 
+var fiftyFifty = Math.random() < 0.5;
+
+// React.createClass call begins here:
+var TonightsPlan = React.createClass({
+  render: function () {
+    var place = fiftyFifty ? 'out' : 'to bed';
+    return <h1>Tonight I'm going {place} WOOO</h1>;
+  }
+});
+
+ReactDOM.render(
+  <TonightsPlan />,
+  document.getElementById('app')
+);
+```
 
 
