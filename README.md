@@ -294,6 +294,57 @@ ReactDOM.render(
 );
 ```
 
+**Ejemplo de un cambio de variables usando el set**
 
+
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
+var Child = require('./Child');
+
+var Parent = React.createClass({
+  getInitialState: function () {
+    return { name: 'Frarthur' };
+  },
+  
+  changeName: function (newName) {
+    this.setState({
+      name: newName
+    });
+  },
+
+  render: function () {
+    return (
+    	<Child 
+    		name={this.state.name} 
+        onChange={this.changeName} />
+    );
+  }
+});
+
+ReactDOM.render(
+	<Parent />, 
+	document.getElementById('app')
+);
+```
+
+**Usando dos variables**
+
+
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
+var styles = {
+  background: 'lightblue',
+  color:      'darkred'
+};
+
+var styleMe = <h1 style={styles}>Please style me!  I am so bland!</h1>;
+
+ReactDOM.render(
+	styleMe, 
+	document.getElementById('app')
+);
+```
 
 
